@@ -28,12 +28,10 @@ public class Player : MonoBehaviour {
     {
         foreach(ContactPoint2D contact in collision.contacts)
         {
-            Debug.Log("Contact " + contact.point + " p " + transform.position);
             if (contact.point.y <= (transform.position.y - 0.3f) &&
                 contact.point.x >= (transform.position.x - 0.2f) &&
                 contact.point.x <= (transform.position.x + 0.2f))
             {
-                Debug.Log("Grounded " + contact.point + " p " + transform.position);
                 grounded = true;
             }
         }

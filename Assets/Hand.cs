@@ -20,6 +20,7 @@ public class Hand : MonoBehaviour {
             Debug.Log("Grab " + collision.collider.name);
 
             grabbedBlock = collision.collider.gameObject;
+            grabbedBlock.GetComponent<Block>().setGrabbed(true);
             dist = collision.collider.gameObject.transform.position - transform.position;
         }
 
@@ -27,10 +28,11 @@ public class Hand : MonoBehaviour {
         {
             Debug.Log("Release Block");
 
+            grabbedBlock.GetComponent<Block>().setGrabbed(false);
             grabbedBlock = null;
         }
 
-        if(grabbedBlock != null)
+        if (grabbedBlock != null)
         {
             grabbedBlock.transform.position = transform.position + dist;
         }
