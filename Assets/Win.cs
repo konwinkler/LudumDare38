@@ -17,6 +17,7 @@ public class Win : MonoBehaviour {
           (player.transform.position.x <= -1f ||
            player.transform.position.x >= 1f))
         {
+            Time.timeScale = 0;
             GetComponent<SpriteRenderer>().enabled = true;
         }
 	}
